@@ -4,7 +4,9 @@
 Build a system to track the total USD value of assets in one or more cryptocurrency wallets on a specified blockchain network. The system should periodically fetch asset balances, retrieve prices, calculate total value, and log results.
 
 ## Advice
-Read the prompt carefully and ask clarifying questions to understand requirements. Use provided documentation and resources to guide your work. If unfamiliar with blockchain concepts, focus on coding, problem-solving, and explaining your approach. **Disable AI / LLM assistance during the interview.**
+Read the prompt carefully and ask clarifying questions to understand requirements. Use provided documentation and resources to guide your work. If unfamiliar with blockchain concepts, focus on coding, problem-solving, and explaining your approach.
+
+**Disable AI / LLM assistance during the interview.**
 
 ## Initial Task
 Implement a tracker for a single wallet address to monitor specified assets (details provided during the interview):
@@ -14,23 +16,22 @@ Implement a tracker for a single wallet address to monitor specified assets (det
 
 ### Requirements:
 1. **Fetch Balances**: Use Web3 library to query balance.
-2. **Fetch Prices**: Use a provided price [API](https://prices.augustdigital.io/docs) to get token prices.
+2. **Fetch Prices**: Use the provided price [API](https://prices.augustdigital.io/docs) to get token prices.
 3. **Calculate Total Value**: Sum the USD value of all assets, accounting for token decimals.
-4. **Logging**: Log the total portfolio value every 5 seconds with a timestamp. Store the last 10 values in a simple data structure (e.g., list).
+4. **Logging**: Log the total portfolio value every 5 seconds with a timestamp. Store the last 10 values in a simple data structure (e.g., list etc.).
 5. **Error Handling**: Handle API or blockchain query failures.
-6. **Verification**: Compare results with a provided portfolio overview ([e.g.](https://debank.com/profile/0x9B974aF13ae64775E7E96fd92d9089b479cB57C5)).
+6. **Verification**: Compare results with a provided portfolio overview ([e.g.,](https://debank.com/profile/0x9B974aF13ae64775E7E96fd92d9089b479cB57C5)).
 
 ## Follow-Up Tasks
-Discuss and implement (time permitting) the following extensions. Explain your design choices, trade-offs, and assumptions in comments or verbally.
+Discuss and implement the following extensions. Explain your design choices, trade-offs, and assumptions in comments or verbally.
 
 ### 1. Dynamic Asset Tracking
-- Support a configurable list of assets via a JSON file.
 - Replace the simple history storage with an efficient data structure (ideally O(1) operations).
 - Add a feature: Log a moving average of recent values (e.g., 5-point average).
-- Discuss: Why your chosen data structure? Time / space complexity? Alternatives?
+- Discuss: Data structures? Time / space complexity? Alternatives?
 
 ### 2. Multi-Wallet Support & Optimization
-- Track multiple wallets (list provided in configuration).
+- Track multiple wallets (provided in configuration.json).
 - Implement caching for prices.
 - Prioritize wallet updates.
 - Discuss: Caching benefits VS drawbacks? How to handle concurrency?
@@ -38,7 +39,7 @@ Discuss and implement (time permitting) the following extensions. Explain your d
 ### 3. Modular Design & Scalability
 - Refactor code into modular components.
 - Add a simple analytical feature.
-- Discuss: How would you scale to 1.000+ wallets? How about 1.000.000+ wallets? Bottlenecks? Optimization strategies (e.g., batch queries)?
+- Discuss: How would you scale to 1.000+ wallets? How about 1.000.000+ wallets? Bottlenecks? Optimization strategies (e.g., batch queries etc.)?
 
 ## Technical Notes
 - **Blockchain Library**: Use Web3.py.
